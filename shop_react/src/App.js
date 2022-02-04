@@ -1,19 +1,18 @@
-import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Description from './components/Description/Description';
-import InfFoto from './ToDo/InfFoto';
-import Footer from './ToDo/footer';
-import Button from './ToDo/button';
+import "./App.css";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Catalog from "./CatalogPage/Catalog";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-     <Description/>
-     <InfFoto/>
-     <Button/>
-    <Footer/>
-    </div>
+    <BrowserRouter>
+      
+      <Routes>
+        <Route path='/home' element={<><Navbar /><Home/></>}/>
+        <Route path='/catalog' element={<><Navbar /><Catalog/></>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

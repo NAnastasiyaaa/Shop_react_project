@@ -1,18 +1,21 @@
 const MenuItems = [
   {
     title: "Home",
-    url: "#",
-    cName: "nav-links active",
+    url: "/home",
+    cName: "nav-links",
+    isActive: window.location.pathname === '/home'
   },
   {
     title: "Catalog",
-    url: "#",
+    url: "/catalog",
     cName: "nav-links",
+    isActive: window.location.pathname === '/catalog'
   },
   {
     title: "Cart",
     url: "#",
     cName: "nav-links",
+    isActive: window.location.pathname === '#'
   },
 ];
 
