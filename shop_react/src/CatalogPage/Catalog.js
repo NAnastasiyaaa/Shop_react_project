@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
+import Filter from "./Filter";
 import Items from "./Items";
 
-
 function Catalog() {
-  return <div>
+  return (
+    <div>
+      <Filter />
       <Items />
-  </div>;
+    </div>
+  );
 }
 
 export default Catalog;

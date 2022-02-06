@@ -1,0 +1,31 @@
+.filterBox select {
+  gap: 30px;
+  border-radius: 10px;
+  padding: 0.4rem 5rem;
+  margin-left: 20px;
+  padding-left: 20px;
+  border: 2px solid black;
+}
+
+.applyButton {
+  border-radius: 10px;
+  height: 35px;
+  width: 120px;
+  text-align: center;
+  line-height: 0px;
+  margin: 0;
+}
+
+.blockButtonAndFilter {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  margin-left: 120px;
+  margin-right: 110px;
+  margin-top: -100px;
+  margin-bottom: 20px;
+}
+
+.borderCatalog {
+  margin-bottom: 30px;
+}

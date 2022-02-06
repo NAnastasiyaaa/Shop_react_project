@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import MenuItems from "./MenuItems";
 import logo from "./images/logo_page.jpg";
 import "./Navbar.css";
-import { BsSearch } from 'react-icons/bs';
-
+import { BsSearch } from "react-icons/bs";
 
 function Navbar({ isSearchEnable }) {
   return (
@@ -26,13 +25,11 @@ function Navbar({ isSearchEnable }) {
           })}
         </ul>
         {window.location.pathname === "/catalog" && (
-            <input className="searchInput" ></input>
-             
+          <>
+            <input className="searchInput"></input>
+            <BsSearch className="iconSearch" />
+          </>
         )}
-         <BsSearch className="iconSearch"/>
-         
-          
-        
       </nav>
     </div>
   );
