@@ -1,8 +1,10 @@
 import React from 'react';
+import Items from "./Items";
+
 
 function Catalog() {
   return <div>
-      Catalog
+      <Items />
   </div>;
 }
 
