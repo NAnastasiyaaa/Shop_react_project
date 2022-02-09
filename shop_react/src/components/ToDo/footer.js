@@ -55,6 +55,10 @@ const styleTextFooter = {
 export default function Footer() {
     return (
         <React.Fragment>
+   
+        &emsp;
+        <p>⠀</p>
+        <p>⠀</p>
         <hr style={styleTextFooter.hr}></hr>
         <h1 style={styleTextFooter.txt}>Privacy</h1>
         <p style={styleTextFooter.txt1}>The content of this site is copyright-protected and is the property of ZARA. ZARA is committed to accessibility. That commitment means ZARA embraces WCAG</p>
