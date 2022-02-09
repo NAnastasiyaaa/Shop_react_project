@@ -1,13 +1,34 @@
-import React, { useEffect,useState } from "react";
+import React, { useState } from "react";
 import MenuItems from "./MenuItems";
 import logo from "./images/logo_page.jpg";
 import "./Navbar.css";
 import { BsSearch } from "react-icons/bs";
-import Items from "../../CatalogPage/Items";
 
 
 
-function Navbar({ isSearchEnable }) {
+function Navbar({changeSeacrh, search}) {
+
+  // const [search, setSearch] = useState("");
+  // const [data, setData] = useState(item_card);
+  const handleChange = (value) => {
+    changeSeacrh(value);
+    // filterData(value);
+  };
+
+  // const filterData = (value) => {
+  //   const lowerCaseValue = value.toLowerCase().trim();
+  //   if (!lowerCaseValue) {
+  //     setData(item_card);
+  //   } else {
+  //     const filteredData = item_card.filter((item) => {
+  //       return Object.keys(item).some((key) => {
+  //         return item[key].toString().toLowerCase().includes(lowerCaseValue);
+  //       });
+  //     });
+  //     setData(filteredData);
+  //   }
+  // };
+
   return (
     <div>
       <nav className="NavbarItems">
@@ -29,7 +50,12 @@ function Navbar({ isSearchEnable }) {
         </ul>
         {window.location.pathname === "/catalog" && (
           <>
-            <input className="searchInput" ></input>
+            <input
+              className="searchInput"
+              // value={filter} onChange={searchText.bind(this)}
+              value={search}
+              onChange={(e) => handleChange(e.target.value)}
+            ></input>
             <BsSearch className="iconSearch" />
           </>
         )}
