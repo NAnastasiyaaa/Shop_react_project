@@ -7,88 +7,36 @@ const Items = ({ search, filter, currencyFilter, colorFilter }) => {
 
   useEffect(() => {
     let finalData = item_card;
-    if (filter && !search) {
-      let array = filter.split("-");
-      finalData = finalData
-        .filter(
-          (item) =>
-            item.item_price >= Number(array[0]) &&
-            item.item_price <= Number(array[1])
-        )
-
-        .filter((item) => {
-          if (currencyFilter) {
-            return currencyFilter.includes(item.currency);
-          }
-          return true;
-        })
-
-        .filter((item) => {
-          if (colorFilter) {
-            return colorFilter.includes(item.color);
-          }
-          return true;
-        });
-    }
-
-    if (search && !filter) {
-      finalData = finalData
-        .filter((item) => {
+    
+    finalData = finalData
+      .filter(item=>{
+        if(search){
           return item.item_name.toLowerCase().includes(search.toLowerCase());
-        })
-        .filter((item) => {
-          if (currencyFilter) {
-            return currencyFilter.includes(item.currency);
-          }
-          return true;
-        })
-        .filter((item) => {
-          if (colorFilter) {
-            return colorFilter.includes(item.color);
-          }
-          return true;
-        });
-    }
+        }
+        return true;
+      })
+      .filter(item=>{
+        if(filter){
+          let array = filter.split("-");
+          return  item.item_price >= Number(array[0]) && item.item_price <= Number(array[1])
+        }
+        return true;
+      })
+      .filter(item=>{
+        if(currencyFilter){
+          return currencyFilter.includes(item.currency);
+        }
+        return true;
+      })
+      .filter(item=>{
+        if(colorFilter){
+          return colorFilter.includes(item.color);
+        }
+        return true;
+      })
 
-    if (!search && !filter) {
-      finalData = finalData
-        .filter((item) => {
-          if (currencyFilter) {
-            return currencyFilter.includes(item.currency);
-          }
-          return true;
-        })
-        .filter((item) => {
-          if (colorFilter) {
-            return colorFilter.includes(item.color);
-          }
-          return true;
-        });
-    }
 
-    if (search && filter) {
-      let array = filter.split("-");
-      finalData = finalData
-        .filter((item) => {
-          return (
-            item.item_name.toLowerCase().includes(search.toLowerCase()) &&
-            item.item_price >= Number(array[0]) &&
-            item.item_price <= Number(array[1])
-          );
-        })
-        .filter((item) => {
-          if (currencyFilter) {
-            return currencyFilter.includes(item.currency);
-          }
-          return true;
-        })
-        .filter((item) => {
-          if (colorFilter) {
-            return colorFilter.includes(item.color);
-          }
-          return true;
-        });
-    }
+
     setData(finalData);
   }, [filter, search, currencyFilter, colorFilter]);
 

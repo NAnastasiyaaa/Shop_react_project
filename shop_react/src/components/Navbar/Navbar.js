@@ -56,7 +56,7 @@ function Navbar({changeSeacrh, search}) {
               value={search}
               onChange={(e) => handleChange(e.target.value)}
             ></input>
-            <BsSearch className="iconSearch" />
+          
           </>
         )}
       </nav>

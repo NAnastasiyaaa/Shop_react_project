@@ -1,7 +1,7 @@
 import React from 'react';
 
 require('./style.css')
-const img1 = require('./1.jpg')
+const img1 = require('./data/item_data')
 const imgstl = {
     stl:{
         width: 400,
