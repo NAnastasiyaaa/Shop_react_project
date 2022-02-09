@@ -5,7 +5,7 @@ button {
     height: 45px;
     line-height: 45px;
     border-radius: 45px;
-    margin: 160px 675px;
+    margin: 140px 675px 50px;
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     text-transform: uppercase;
@@ -22,4 +22,19 @@ button {
     box-shadow: 0 15px 20px black;
     color: black;
     transform: translateY(-7px);
+  }
+
+  h1.text {
+    margin-right: 400px;
+    margin-left: 150px;
+  }
+
+  p.textd {
+    margin-right: 400px;
+    margin-left: 150px;
+    font-size: 12px;
+  }
+
+  #more{
+    display: none;
   }

@@ -55,10 +55,6 @@ const stylesFoto2 = {
     img2:{
         width: 350,
         paddingLeft: 80,
-        // background: '#f7eee1'
-        // background: '#e3e3e3'
-        // background: '#c7c5c3'
-        // background: 'black'
         background: '#faf8f5'
     }
 }
@@ -68,10 +64,6 @@ const stylesFoto3 = {
     img3:{
         width: 350,
         paddingLeft: 80,
-        // background: '#f7eee1'
-        // background: '#e3e3e3'
-        // background: '#c7c5c3'
-        // background: 'white'
         background: '#faf8f5'
     }
 }
@@ -84,7 +76,7 @@ const styleText = {
         left: 1010,
         top: 1270,
         width: 340,
-        height: 60,
+        height: 55,
         padding: 5,
         background: '#faf8f5'
     },

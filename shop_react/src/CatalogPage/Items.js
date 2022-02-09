@@ -10,7 +10,7 @@ const Items1 = itemss.map((style) =>
     <h3>Coat warm wool Premium - Limited edition</h3>
     <h4>Warm coat made of high quality mixed woolen fabric with lapels and long sleeves. Fastens with hidden buttons.</h4>
       <span class="price">5 299 UAH</span>
-      <a href="" class="button">View more</a>
+      <a href="/viewmore/1" class="button">View more</a>
   </div>
 </div>
 )
@@ -23,7 +23,7 @@ const Items2 = itemss.map((style) =>
     <h3>Shirt with leaves</h3>
     <h4>Standard satin shirt with Italian collar, short sleeves and side slits at the bottom. Fastens with buttons on the front.</h4>
       <span class="price">1 499 UAH</span>
-      <a href="" class="button">View more</a>
+      <a href="/viewmore/2" class="button">View more</a>
   </div>
 </div>
 )
@@ -36,7 +36,7 @@ const Items3 = itemss.map((style) =>
     <h3>Lightweight basic t-shirt</h3>
     <h4>Lightweight basic T-shirt with a round collar and short sleeves. Made of cotton.</h4>
       <span class="price">499 UAH</span>
-      <a href="" class="button">View more</a>
+      <a href="/viewmore/3" class="button">View more</a>
   </div>
 </div>
 )
@@ -49,7 +49,7 @@ const Items4 = itemss.map((style) =>
     <h3>Striped t-shirt Premium</h3>
     <h4>T-shirt with a round collar in the hem and long sleeves. Consignment note front pocket.</h4>
       <span class="price">299 UAH</span>
-      <a href="" class="button">View more</a>
+      <a href="/viewmore/4" class="button">View more</a>
   </div>
 </div>
 )
