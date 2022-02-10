@@ -5,7 +5,8 @@ const item_card = [
     item_desc:
       "Warm coat made of high quality mixed woolen fabric with lapels and long sleeves. Fastens with hidden buttons.",
     item_price: 5299,
-    currency: "UAH",
+    currency: "USD",
+    color:'red',
     photo: "./images/1.jpg",
     button: "/viewmore/1"
   },
@@ -15,7 +16,8 @@ const item_card = [
     item_desc:
       "Standard satin shirt with Italian collar, short sleeves and side slitsat the bottom. Fastens with buttons on the front.",
     item_price: 1499,
-    currency: "UAH",
+    currency: "USD",
+    color:'blue',
     photo: "./images/2.jpg",
     button: "/viewmore/2"
   },
@@ -25,7 +27,8 @@ const item_card = [
     item_desc:
       "Lightweight basic T-shirt with a round collar and short sleeves. Made of cotton.",
     item_price: 499,
-    currency: "UAH",
+    currency: "USD",
+    color:'white',
     photo: "./images/3.jpg",
     button: "/viewmore/3"
   },
@@ -36,6 +39,7 @@ const item_card = [
       "T-shirt with a round collar in the hem and long sleeves. Consignment note front pocket.",
     item_price: 299,
     currency: "UAH",
+    color:'red',
     photo: "./images/4.jpg",
     button: "/viewmore/4"
   },
