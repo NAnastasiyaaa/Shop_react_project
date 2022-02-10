@@ -7,6 +7,7 @@ const item_card = [
     item_price: 5299,
     currency: "UAH",
     photo: "./images/1.jpg",
+    button: "/viewmore/1"
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const item_card = [
     item_price: 1499,
     currency: "UAH",
     photo: "./images/2.jpg",
+    button: "/viewmore/2"
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const item_card = [
     item_price: 499,
     currency: "UAH",
     photo: "./images/3.jpg",
+    button: "/viewmore/3"
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ const item_card = [
     item_price: 299,
     currency: "UAH",
     photo: "./images/4.jpg",
+    button: "/viewmore/4"
   },
 ];
 
