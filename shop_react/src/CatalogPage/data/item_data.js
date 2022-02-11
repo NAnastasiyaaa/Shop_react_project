@@ -45,4 +45,4 @@ const item_card = [
   },
 ];
 
-export default item_card;
+module.exports =  item_card;

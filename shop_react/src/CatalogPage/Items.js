@@ -4,7 +4,7 @@ import "./styleItems.css";
 import axios from "axios";
 
 const Items = ({ search, filter, currencyFilter, colorFilter }) => {
-  const [data, setData] = useState(item_card);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     let finalData = item_card;
@@ -43,13 +43,29 @@ const Items = ({ search, filter, currencyFilter, colorFilter }) => {
   }, [filter, search, currencyFilter, colorFilter]);
 
   //axios
- 
-  React.useEffect(() => {
-    axios.get('./data/item_data.js').then((response) => {
+
+  // React.useEffect(() => {
+  //   axios.get('http://localhost:4000/item_data').then((response) => {
+  //     setData(response.data);
+  //   });
+  // }, []);
+  //  console.log(data)
+  // if (!data) return null;
+
+  // useEffect(()=>{
+  //   fetch('/item_data')
+  //   .then(res=>res.json())
+  //   .then(data=>setData(data))
+  // },[])
+  // console.log(data)
+
+  useEffect(() => {
+    axios.get("/item_data").then((response) => {
       setData(response.data);
     });
+    console.log(data);
   }, []);
-
+  console.log(data);
   if (!data) return null;
 
 
