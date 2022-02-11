@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar/Navbar";
 import Filter from "./Filter";
 import Items from "./Items";
 
+
+
 function Catalog() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");

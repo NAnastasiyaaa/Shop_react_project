@@ -1,44 +1,57 @@
 import React, { useEffect, useState } from "react";
 import item_card from "./data/item_data";
 import "./styleItems.css";
+import axios from "axios";
 
 const Items = ({ search, filter, currencyFilter, colorFilter }) => {
   const [data, setData] = useState(item_card);
 
   useEffect(() => {
     let finalData = item_card;
-    
+
     finalData = finalData
-      .filter(item=>{
-        if(search){
+      .filter((item) => {
+        if (search) {
           return item.item_name.toLowerCase().includes(search.toLowerCase());
         }
         return true;
       })
-      .filter(item=>{
-        if(filter){
+      .filter((item) => {
+        if (filter) {
           let array = filter.split("-");
-          return  item.item_price >= Number(array[0]) && item.item_price <= Number(array[1])
+          return (
+            item.item_price >= Number(array[0]) &&
+            item.item_price <= Number(array[1])
+          );
         }
         return true;
       })
-      .filter(item=>{
-        if(currencyFilter){
+      .filter((item) => {
+        if (currencyFilter) {
           return currencyFilter.includes(item.currency);
         }
         return true;
       })
-      .filter(item=>{
-        if(colorFilter){
+      .filter((item) => {
+        if (colorFilter) {
           return colorFilter.includes(item.color);
         }
         return true;
-      })
-
-
+      });
 
     setData(finalData);
   }, [filter, search, currencyFilter, colorFilter]);
+
+  //axios
+ 
+  React.useEffect(() => {
+    axios.get('./data/item_data.js').then((response) => {
+      setData(response.data);
+    });
+  }, []);
+
+  if (!data) return null;
+
 
   const listItems = data.map((item) => (
     <div class="product-item">
@@ -52,7 +65,9 @@ const Items = ({ search, filter, currencyFilter, colorFilter }) => {
         <span class="price">
           {item.item_price} {item.currency}
         </span>
-        <a href={item.button} class="button">View more</a>
+        <a href={item.button} class="button">
+          View more
+        </a>
       </div>
     </div>
   ));
