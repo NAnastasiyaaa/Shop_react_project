@@ -9,12 +9,15 @@ server.get("/item_data", (req, res) => {
   res.json(item_card);
 });
 
+
+server.listen(8000, () => {
+  console.log("server running!");
+});
+
+
+
 // server.get("/item_data/:id", (req, res) => {
 //   const {id} = req.params
 //   const product = item_card.find(el=>el.id === +id)
 //   res.json(product)
 // });
-
-server.listen(8000, () => {
-  console.log("server running!");
-});

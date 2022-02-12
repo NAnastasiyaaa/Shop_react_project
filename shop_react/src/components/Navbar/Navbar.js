@@ -31,8 +31,7 @@ function Navbar({ changeSeacrh, search }) {
         {window.location.pathname === "/catalog" && (
           <>
             <input
-              className="searchInput"
-              // value={filter} onChange={searchText.bind(this)}
+              className="searchInput" placeholder="Search..."
               value={search}
               onChange={(e) => handleChange(e.target.value)}
             ></input>
