@@ -31,12 +31,10 @@ server.get("/item_data/", (req, res) => {
 
   if (filters["item_name"]) {
     data = data.filter((item) => {
-      return filters["item_name"].toLowerCase().includes(filters["item_name"].toLowerCase());
+      return item.item_name.toLowerCase().includes(filters["item_name"].toLowerCase());
     });
   }
-
-
-
+        
   res.json(data);
 });
 

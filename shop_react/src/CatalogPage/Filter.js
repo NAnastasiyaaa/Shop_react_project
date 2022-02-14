@@ -10,7 +10,7 @@ function Filter({ change, filter, currencyFilter, changeCurrencyFilter, changeCo
       <div className="blockButtonAndFilter">
         <div className="filterBox">
           <select onChange={(e) => handleChange(e.target.value)}>
-            <option value={"0-99999"}>All prices</option>
+            <option value={filter}>All prices</option>
             <option value={"200-500"}>200 - 500</option>
             <option value={"500-2000"}>500 - 2000</option>
             <option value={"2000-6000"}>2000 - 6000</option>
