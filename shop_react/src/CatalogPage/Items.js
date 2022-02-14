@@ -53,7 +53,7 @@ const Items = ({
       // setData(finalData);
     // }
 
-    changeLoading(true);
+    // changeLoading(true);
 
     setTimeout(
       () =>
@@ -91,7 +91,7 @@ const Items = ({
             setError(error);
           }
         ),
-      3000
+      2000
     );
   }, []);
   console.log(data);
