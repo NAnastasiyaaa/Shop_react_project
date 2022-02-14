@@ -15,46 +15,7 @@ const Items = ({
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // if (data) {
-      // let finalData = data;
-
-      // finalData = finalData
-
-      // .filter((item) => {
-      //   if (search) {
-      //     return item.item_name.toLowerCase().includes(search.toLowerCase());
-      //   }
-      //   return true;
-      // });
-
-      //     .filter((item) => {
-      //       if (filter) {
-      //         let array = filter.split("-");
-      //         return (
-      //           item.item_price >= Number(array[0]) &&
-      //           item.item_price <= Number(array[1])
-      //         );
-      //       }
-      //       return true;
-      //     })
-      //     .filter((item) => {
-      //       if (currencyFilter) {
-      //         return currencyFilter.includes(item.currency);
-      //       }
-      //       return true;
-      //     })
-      //     .filter((item) => {
-      //       if (colorFilter) {
-      //         return colorFilter.includes(item.color);
-      //       }
-      //       return true;
-      //     });
-
-      // setData(finalData);
-    // }
-
     // changeLoading(true);
-
     setTimeout(
       () =>
         axios
@@ -63,6 +24,7 @@ const Items = ({
           )
           .then(
             (response) => {
+              changeLoading(true);
               changeLoading(null);
               setData(response.data);
             },
