@@ -15,54 +15,73 @@ const Items = ({
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if(data) {
-      let finalData = data;
-
-      finalData = finalData
-        .filter((item) => {
-          if (search) {
-            return item.item_name.toLowerCase().includes(search.toLowerCase());
-          }
-          return true;
-        })
-        .filter((item) => {
-          if (filter) {
-            let array = filter.split("-");
-            return (
-              item.item_price >= Number(array[0]) &&
-              item.item_price <= Number(array[1])
-            );
-          }
-          return true;
-        })
-        .filter((item) => {
-          if (currencyFilter) {
-            return currencyFilter.includes(item.currency);
-          }
-          return true;
-        })
-        .filter((item) => {
-          if (colorFilter) {
-            return colorFilter.includes(item.color);
-          }
-          return true;
-        });
-
-      setData(finalData);
-    }
     
+    // if(data) {
+    //   let finalData = data;
+
+    //   finalData = finalData
+    //     .filter((item) => {
+    //       if (search) {
+    //         return item.item_name.toLowerCase().includes(search.toLowerCase());
+    //       }
+    //       return true;
+    //     })
+    //     .filter((item) => {
+    //       if (filter) {
+    //         let array = filter.split("-");
+    //         return (
+    //           item.item_price >= Number(array[0]) &&
+    //           item.item_price <= Number(array[1])
+    //         );
+    //       }
+    //       return true;
+    //     })
+    //     .filter((item) => {
+    //       if (currencyFilter) {
+    //         return currencyFilter.includes(item.currency);
+    //       }
+    //       return true;
+    //     })
+    //     .filter((item) => {
+    //       if (colorFilter) {
+    //         return colorFilter.includes(item.color);
+    //       }
+    //       return true;
+    //     });
+
+    //   setData(finalData);
+    // }
+
+    changeLoading(true)
+
+    setTimeout(
+      () =>
+    axios.get(`http://localhost:8000/item_data?color=${colorFilter}&currency=${currencyFilter}&item_price=${filter}&item_name=${search}`).then(
+          (response) => {
+            changeLoading(null);
+            setData(response.data);
+          },
+          (error) => {
+            changeLoading(null);
+            setError(error);
+          }
+        ),
+        1000
+    );
   }, [filter, search, currencyFilter, colorFilter]);
 
   //axios
   useEffect(() => {
     setTimeout(
       () =>
-        axios.get("http://localhost:8000/it5em_data").then(
+        axios.get("http://localhost:8000/item_data").then(
           (response) => {
+            console.log(response)
             changeLoading(null);
             setData(response.data);
           },
           (error) => {
+            console.log(error)
             changeLoading(null);
             setError(error);
           }

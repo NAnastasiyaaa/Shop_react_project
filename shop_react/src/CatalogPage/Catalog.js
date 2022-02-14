@@ -17,7 +17,7 @@ function Catalog() {
     <div>
       <Navbar changeSeacrh={setSearch} search={search} />
       {isLoading && <LoadingIndicator/>}
-      {!isLoading && <Filter
+      {!isLoading && <Filter 
         change={setFilter}
         filter={filter}
         currencyFilter={currencyFilter}
